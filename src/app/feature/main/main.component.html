@@ -1,0 +1,19 @@
+<p class="theme-monkeytype">main works!</p>
+<div class="words">
+    @for (word of words(); track $index; let wi = $index) {
+        <div class="word">
+            @for (char of word; track $index; let ci = $index) {
+                <span
+                    [ngClass]="{
+                        correct: char.isCorrect === true,
+                        incorrect: char.isCorrect === false,
+                        indicator: wi === wordIdx && ci === charIdx,
+                    }"
+                    >{{ char.char }}</span
+                >
+            }
+        </div>
+    }
+</div>
+
+<input type="text" (keyup)="onType($event)" />

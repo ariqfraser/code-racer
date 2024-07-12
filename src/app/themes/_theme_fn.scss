@@ -1,0 +1,12 @@
+$theme-map: (
+    --background-color: black,
+    --color-primary: yellow,
+    --text-color: white,
+    --text-color-untyped: red,
+    --text-color-typed: white,
+    --text-color-incorrect: red,
+);
+
+@function get($key) {
+    @return map-get($theme-map, $key);
+}

@@ -1,0 +1,46 @@
+@import "themes";
+
+p {
+    color: get(--color-text-incorrect);
+}
+
+.words {
+    display: flex;
+    gap: 1rem;
+    width: 80vw;
+    margin-inline: auto;
+}
+
+.word {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2px;
+    font-size: 2rem;
+    align-items: center;
+
+    span:not(.correct):not(.incorrect) {
+        color: grey;
+    }
+
+    .correct {
+        color: black;
+    }
+
+    .incorrect {
+        color: red;
+    }
+}
+
+.indicator {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 2rem;
+        width: 2px;
+        background-color: blue;
+    }
+}
